@@ -4,10 +4,12 @@ function open_session(){
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    function destroy_session(){
-        session_destroy();
-    }
 }
+function destroy_session(){
+    session_destroy();
+}
+
+
 function est_connect():bool{
     return isset($_SESSION['userConnect']);
 }

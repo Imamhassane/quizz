@@ -1,5 +1,5 @@
 <?php  
-/*if ( !est_admin()) header('location:'.WEB_ROUTE.'?controllers=security&view=');
+//if ( !est_admin()) header('location:'.WEB_ROUTE.'?controllers=security&view=jeu');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (isset($_GET['view'])) {
         if ($_GET['view'] == 'jeu'){
@@ -8,5 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             require_once(ROUTE_DIR.'view/security/connexion.html.php');
         }
     }
-}    */         
+}   
+         
 ?> 
