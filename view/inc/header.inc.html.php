@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="" type="" href="">
+       
     <title>Document</title>
 </head>
-<body s>
+<body>
 <!------ Include the above in your HEAD tag ---------->
 
 <!-- no additional media querie or css is required -->
