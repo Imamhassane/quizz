@@ -73,7 +73,7 @@ function inscription(array $data ):void{
         validation_password($password,'password',$arrayError);
         validation_champ($prenom,'prenom',$arrayError);
         validation_champ($nom,'nom',$arrayError);
-        separateur($datenaiss,'datenaiss',$arrayError);
+        validation_date_naissance($datenaiss,'datenaiss',$arrayError,$test);
         if ($password != $confirmpassword){
             $arrayError['confirmpassword'] = 'Les deux password ne sont pas identiques';
         }               
@@ -90,7 +90,11 @@ function inscription(array $data ):void{
                }else {
                     $data['role'] = 'ROLE_JOUEUR';
             }
-            header('location:'.WEB_ROUTE.'?controllers=security&view=connexion');
+            if (est_admin()){
+                header('location:'.WEB_ROUTE.'?controllers=admin&view=liste.question');
+            }else{
+                header('location:'.WEB_ROUTE.'?controllers=security&view=connexion');
+            }
          }else {
              $_SESSION['arrayError']=$arrayError;
              header('location:'.WEB_ROUTE.'?controllers=security&view=inscription');
