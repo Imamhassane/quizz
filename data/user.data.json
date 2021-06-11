@@ -33,6 +33,37 @@
         "password": "imam@03",
         "role": "ROLE_JOUEUR"
     },
+    [],
+    {
+        "login": "joueur@gmail.com",
+        "password": "joueur@1",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "login": "admin@gmail.com",
+        "password": "aaaaaa",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "login": "imamniass123@gmail.com",
+        "password": "111111",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "login": "niass123@gmail.com",
+        "password": "111111",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "login": "imam123@gmail.com",
+        "password": "aaa111",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "login": "niass.cisse@gmail.com",
+        "password": "imam@03",
+        "role": "ROLE_JOUEUR"
+    },
     {
         "nom": "Niass",
         "prenom": "cisse",
@@ -40,6 +71,54 @@
         "datenaiss": "20\/04\/2000",
         "login": "imam@gmail.com",
         "password": "111111",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "nom": "kandji",
+        "prenom": "diagne",
+        "sexe": "f",
+        "datenaiss": "20\/04\/2000",
+        "login": "diagnekandji@gmail.com",
+        "password": "kandji11",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "nom": "Traore",
+        "prenom": "ibrahima",
+        "sexe": "m",
+        "datenaiss": "20\/04\/2000",
+        "login": "libassetraore@gmail.com",
+        "password": "444444",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "nom": "Niass",
+        "prenom": "Adama",
+        "sexe": "f",
+        "datenaiss": "29\/02\/2000",
+        "login": "imamniass13@gmail.com",
+        "password": "aaaaaa",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "prenom": "Test0",
+        "nom": "Test0",
+        "login": "test@gmail.com",
+        "password": "test111",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "prenom": "Test0",
+        "nom": "Test0",
+        "login": "test1@gmail.com",
+        "password": "test111",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "prenom": "Test0",
+        "nom": "dkqq",
+        "login": "ateqqast@gmail.com",
+        "password": "aaaaaa",
         "role": "ROLE_JOUEUR"
     }
 ]

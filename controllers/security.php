@@ -68,12 +68,12 @@ function inscription(array $data ):void{
             $arrayError['login'] = 'Ce login existe déjà';
             $_SESSION['arrayError']=$arrayError;
             header('location:'.WEB_ROUTE.'?controllers=security&view=inscription');
-            exit;
+            
         }
         validation_password($password,'password',$arrayError);
         validation_champ($prenom,'prenom',$arrayError);
         validation_champ($nom,'nom',$arrayError);
-        validation_date_naissance($datenaiss,'datenaiss',$arrayError,$test);
+        // validation_date_naissance($datenaiss,'datenaiss',$arrayError,$test);
         if ($password != $confirmpassword){
             $arrayError['confirmpassword'] = 'Les deux password ne sont pas identiques';
         }               
@@ -94,8 +94,10 @@ function inscription(array $data ):void{
                 header('location:'.WEB_ROUTE.'?controllers=admin&view=liste.question');
             }else{
                 header('location:'.WEB_ROUTE.'?controllers=security&view=connexion');
+
             }
-         }else {
+            
+        }else {
              $_SESSION['arrayError']=$arrayError;
              header('location:'.WEB_ROUTE.'?controllers=security&view=inscription');
          }
