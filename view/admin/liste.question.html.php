@@ -21,9 +21,6 @@
                         <?php endif ?>
                 </div>
             </nav>
-        <div class="body-admin">
-        
-        </div>
+       
     </div>
 </div>
-    
