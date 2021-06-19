@@ -6,7 +6,11 @@ if (isset($_SESSION['arrayError'])){
 
 require(ROUTE_DIR.'view/inc/header.inc.html.php');
 ?>
-             
+<div class="container-fluid">
+<img class="img-fluid " src="<?php echo  WEB_ROUTE.'img/logo.png';?>" alt="" srcset="">
+
+    <h1>Le plaisir de jouer</h1>
+</div>             
 <div class="container col-md-8 mt-5 ">
     <?php if (isset($arrayError['erreurConnexion'])):?>
             <div class="alert alert-danger"  role="alert">

@@ -98,8 +98,14 @@ function inscription(array $data ):void{
             }
             
         }else {
-             $_SESSION['arrayError']=$arrayError;
-             header('location:'.WEB_ROUTE.'?controllers=security&view=inscription');
+            if(est_admin()){
+                $_SESSION['arrayError']=$arrayError;
+                header('location:'.WEB_ROUTE.'?controllers=admin&view=creer.admin');
+            }else{
+                $_SESSION['arrayError']=$arrayError;
+                header('location:'.WEB_ROUTE.'?controllers=security&view=inscription');
+            }
+            
          }
 }
 function deconnexion():void{

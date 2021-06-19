@@ -120,5 +120,12 @@
         "login": "ateqqast@gmail.com",
         "password": "aaaaaa",
         "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "Test0",
+        "nom": "Test0",
+        "login": "tesqqast@gmail.com",
+        "password": "aaaaaa",
+        "role": "ROLE_ADMIN"
     }
 ]

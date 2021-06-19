@@ -5,46 +5,51 @@ if (isset($_SESSION['arrayError'])){
 }
 require_once(ROUTE_DIR.'view/inc/header.inc.html.php');
 ?>
-<style>
-    .container-fluid{
-        display:none;
-    }
-</style>
-<header>
-    
-
-    <div class="menu">
-            <nav class="navbar navbar-expand-sm navbar-dark">
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <?php if (est_admin()):?>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="<?= WEB_ROUTE.'?controllers=admin&view=liste.question'?>">Liste des questions</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Liste des joueurs </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="<?= WEB_ROUTE.'?controllers=security&view=inscription'?>">Creer admin  </a>
-                        </li>
-                        <?php endif ?>
-                        <?php if (est_joueur()):?>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="<?= WEB_ROUTE.'?controllers=joueur&view=jeu'?>">Jeu </a>
-                        </li>
-                        <?php endif ?>
-                    </ul>
-                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                    <?php if (est_connect()):?>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="<?= WEB_ROUTE.'?controllers=security&view=deconnexion'?>">Deconnexion<span class="sr-only">(current)</span></a>
-                        </li>
-                        </ul>
-                        <?php endif ?>
-                </div>
-            </nav>
+<div class="for-mobile">
+    <div class="mt-4 admin-profil">
+            <h2>Imam</h2>
+            <h2>Hassan</h2>
     </div>
-</header>
+    <div class="menu">
+        <?php if(est_admin()):?>
+            <div class="d-flex mt-4">
+                <a class=" ml-3 mt-4" href="<?= WEB_ROUTE.'?controllers=admin&view=liste.question'?>">Liste des question</a>
+                <img class=" ml-auto mt-4 mr-2 cursor" src="<?php echo  WEB_ROUTE.'img/ic-liste-active.png';?>" alt="" srcset="">
+            </div>
+            <div class="d-flex mt-4">
+                <a class=" ml-3 mt-0 " href="<?= WEB_ROUTE.'?controllers=admin&view=liste.joueur'?>">Liste des joueurs</a>
+                <img class=" ml-auto mr-2 cursor" src="<?php echo  WEB_ROUTE.'img/ic-ajout.png';?>" alt="" srcset="">
+
+            </div>            
+            <div class="d-flex mt-4">
+                <a class=" ml-3 mt-0" href="<?= WEB_ROUTE.'?controllers=admin&view=creer.admin'?>">Creer admin  </a>
+                <img class=" ml-auto mr-2 cursor" src="<?php echo  WEB_ROUTE.'img/ic-liste.png';?>" alt="" srcset="">
+            </div>
+            <div class="d-flex mt-4">
+                <a class=" ml-3 mt-0" href="<?= WEB_ROUTE.'?controllers=admin&view=creer.question'?>">Creer Questions</a>
+                <img class=" ml-auto mr-2 cursor" src="<?php echo  WEB_ROUTE.'img/ic-ajout.png';?>" alt="" srcset="">
+            </div>
+            <div class="d-flex mt-4">
+                <a class=" ml-3 mt-0" href="<?= WEB_ROUTE.'?controllers=admin&view=liste.admin'?>">Liste des admins</a>
+                <img class=" ml-auto mr-2 cursor" src="<?php echo  WEB_ROUTE.'img/ic-liste.png';?>" alt="" srcset="">
+            </div>
+            <div class="d-flex mt-4">
+                <a class=" ml-3 mt-0" href="#">Modifier</a>
+                <img class=" ml-auto mr-2 cursor" src="<?php echo  WEB_ROUTE.'img/ic-liste.png';?>" alt="" srcset="">
+            </div>  
+            <div class="d-flex mt-4">
+                <a class=" ml-3 mt-0" href="#">Supprimer</a>
+                <img class=" ml-auto mr-2 supprimer" src="<?php echo  WEB_ROUTE.'img/ic-supprimer.png';?>" alt="" srcset="">
+            </div> 
+            <?php endif ?>
+            <?php if(est_joueur()):?>
+        
+    
+            
+            <?php endif ?>
+    </div>
+</div>
 <?php
 require(ROUTE_DIR.'view/inc/footer.inc.html.php');
 ?>
+
