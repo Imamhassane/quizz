@@ -22,9 +22,9 @@
                                 <div class="col-auto my-1">
                                     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                                         <option selected></option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <option value="1">5</option>
+                                        <option value="2">10</option>
+                                        <option value="3">15</option>
                                     </select>
                                 </div>
                             </div>
@@ -32,10 +32,10 @@
                         <div class=" form-group row mt-5 ml-3 ">
                             <label for="" class="mt-2">Type de réponse</label>
                             <select class="form-select ml-2" aria-label="Disabled select example" >
-                                <option selected>text,check....</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option selected>type</option>
+                                <option value="1">Text</option>
+                                <option value="2">Chekhbox</option>
+                                <option value="3">radio</option>
                             </select>
                                 <div class="btn-plus"> 
                                     <a href="#" class="btn btn-info btn-lg ml-2 "><span class="glyphicon glyphicon-plus"></span>+</a>

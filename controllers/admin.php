@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             require(ROUTE_DIR.'view/admin/creer.question.html.php');
         }elseif($_GET['view'] == 'liste.admin'){
             require(ROUTE_DIR.'view/admin/liste.admin.html.php');
+        }elseif($_GET['view'] == 'tableau.bord'){
+            require(ROUTE_DIR.'view/admin/tableau.bord.html.php');
         }
     }
 }            
