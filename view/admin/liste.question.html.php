@@ -15,9 +15,15 @@
                  <!-- <form > -->
                 <div style="display: inline-grid;">
 
-             
+                <?php 
+                     $json=file_get_contents(FILE_QUESTIONS);
+                     $arrayUser= json_decode($json,true);        
+                ?>     $json=file_get_contents(FILE_QUESTIONS);
+                     $arrayUser= json_decode($json,true);        
+                ?>
                     <div class="form-check m-2"  style="display: inline-grid;">
-                        <span>1: Les langages du web</span>
+
+                        <span>1: Les langages du web </span> 
                         <label class="form-check-label ml-5 mt-2">
                             <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
                             HTML
@@ -33,7 +39,7 @@
                     </div>
 
                     <div class="form-check m-2"  style="display: inline-grid;">
-                        <span>2: D'ou vient le corona</span>
+                        <span>2: D'ou vient le corona </span>
                         <label class="form-check-label ml-5 mt-2">
                             <input type="radio" class="form-check-input" name="corona" id="" value="checkedValue" checked>
                             Italie
@@ -46,7 +52,7 @@
 
 
                     <div class="form-check m-2"  style="display: inline-grid;">
-                        <span>3: Langage qui s'adapte sur Android et Ios</span>
+                        <span>3:  sur Android et Ios </span>
                         <label class="ml-4 mt-1">
                             <input type="texte" name="" id="" value="" >
                         </label>
@@ -55,7 +61,7 @@
 
 
                     <div class="form-check m-2"  style="display: inline-grid;">
-                        <span>4:  Première école de codage au Sénégal</span>
+                        <span>4:  codage au Sénégal</span>
                         <label class="form-check-label ml-5 mt-2">
                             <input type="radio" class="form-check-input" name="codage" id="" value="checkedValue" checked>
                             Simplon
@@ -66,7 +72,7 @@
                         </label>
                     </div>
                     <div class="form-check m-2"  style="display: inline-grid;">
-                        <span>5: Les précurseurs de la révolution digitale</span>
+                        <span>5:  révolution digitale </span>
                         <label class="form-check-label ml-5 mt-2">
                             <input type="radio" class="form-check-input" name="digitale" id="" value="checkedValue" checked>
                             GAFAM
@@ -76,7 +82,7 @@
                            CIA-FBI
                         </label>
                     </div>
-                </div>
+                </div> 
                 <!-- </form>  -->
 
 
@@ -91,3 +97,8 @@
 
         </div>
     </div>
+<style>
+.cursor{
+    
+}
+</style>

@@ -79,8 +79,7 @@
                             
                             .menu {
                                 background-color: #fff;
-                                margin-top: -8%;
-                                height: 350px;
+                                height: 270px;
                                 border-radius: 0 0 20px 20px;
                             }
                             
@@ -114,7 +113,7 @@
                                 padding: 0px;
                                 background-color: #ddd;
                                 border-radius: 20px 20px 0 0;
-                                height: 830px;
+                                /* height: 830px; */
                             }
                             
                             .text-white {
@@ -124,7 +123,7 @@
                             .pageQuestionList {
                                 background-color: #fff;
                                 border-radius: 20px 20px 20px 20px;
-                                height: 630px;
+                                /* height: 630px; */
                                 padding-left: 0px;
                                 margin-top: 3%
                             }
@@ -132,7 +131,7 @@
                             .pageAddQuestion {
                                 background-color: #fff;
                                 border-radius: 20px 20px 20px 20px;
-                                height: 520px;
+                                /* height: 520px; */
                                 margin-top: 3%;
                                 padding-left: 0px;
                             }
@@ -140,7 +139,7 @@
                             .pageAddAdmin {
                                 background-color: #fff;
                                 border-radius: 20px 20px 20px 20px;
-                                height: 550px;
+                                /* height: 550px; */
                                 padding-left: 0px;
                                 margin-top: 3%
                             }
@@ -148,7 +147,7 @@
                             .pageListJoueur {
                                 background-color: #fff;
                                 border-radius: 20px 20px 20px 20px;
-                                height: 580px;
+                                /* height: 580px; */
                                 margin-top: 3%;
                                 padding-left: 0px;
                             }
@@ -193,6 +192,7 @@
                             .cursor {
                                 cursor: pointer;
                                 width: 8%;
+                                color: #c90017;
                             }
                             
                             .supprimer {
@@ -204,7 +204,6 @@
                             .questionlist {
                                 border: 1px solid #c90017;
                                 margin-top: 4%;
-                                height: 540px;
                                 margin-left: 2%;
                                 margin-right: 2%;
                                 border-radius: 15px 15px 15px 15px;
@@ -213,7 +212,6 @@
                             .questionliste {
                                 border: 1px solid #c90017;
                                 margin-top: 3%;
-                                height: 435px;
                                 margin-left: 2%;
                                 margin-right: 2%;
                                 border-radius: 15px 15px 15px 15px;
@@ -222,7 +220,6 @@
                             .questionlistes {
                                 border: 1px solid #c90017;
                                 margin-top: 3%;
-                                height: 450px;
                                 margin-left: 2%;
                                 margin-right: 2%;
                                 border-radius: 15px 15px 15px 15px;
@@ -243,6 +240,7 @@
                             
                             .suivante button {
                                 float: right;
+                                background-color: #c90017;
                             }
                             
                             .form-select {
@@ -269,7 +267,7 @@
                             }
                             
                             .btn-plus a {
-                                margin-top: 0px;
+                                margin-top: 9px;
                                 height: 40px;
                                 background-color: #c90017;
                                 border: none;
@@ -321,6 +319,14 @@
                                 cursor: pointer;
                             }
                             
+                            .ask {
+                                color: #c90017;
+                            }
+                            
+                            .form-check {
+                                margin-top: -8px
+                            }
+                            
                             @media screen and (max-width: 767px) {
                                 .deconnexion {
                                     border-radius: 0;
@@ -348,13 +354,11 @@
                                 }
                                 .questionlistes,
                                 .questionliste {
-                                    height: 450px;
                                     border-radius: 0px;
                                 }
                                 .pageAddAdmin {
                                     border-radius: 0;
                                     margin-top: 0px;
-                                    height: 700px
                                 }
                                 .pageQuestionList {
                                     border-radius: 0;
@@ -364,21 +368,17 @@
                                     border-radius: 0;
                                     margin-top: 0px;
                                     margin-left: 0%;
-                                    height: 600px
                                 }
                                 .pageListJoueur {
                                     border-radius: 0;
                                     margin-top: 0px;
                                     margin-left: 0%;
                                 }
-                                .menu-deconnect {
-                                    height: 600px
-                                }
                                 .ml-5 {
                                     margin-left: 0px;
                                 }
                                 .form-select {
-                                    width: 25%;
+                                    width: 50%;
                                 }
                                 .typereponse {
                                     width: 44%;
@@ -419,6 +419,14 @@
                                 }
                                 .menu-mobile {
                                     border-bottom: 1px solid #c90017;
+                                }
+                                .cursor {
+                                    margin-top: 10px;
+                                }
+                                .ask {
+                                    margin-top: 30px;
+                                    margin-right: 23px;
+                                    color: #c90017;
                                 }
                             }
                             /*                 

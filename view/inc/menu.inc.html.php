@@ -12,7 +12,7 @@ require_once(ROUTE_DIR.'view/inc/header.inc.html.php');
     </div>
     <div class="menu">
         <?php if(est_admin()):?>
-            <div class="d-flex mt-4">
+            <div class="d-flex ">
                 <a class=" ml-3 mt-4" href="<?= WEB_ROUTE.'?controllers=admin&view=liste.question'?>">Liste des questions</a>
                 <i class="fas fa-list-ul ml-auto mt-4 mr-2 cursor"></i>
             </div>
@@ -29,17 +29,11 @@ require_once(ROUTE_DIR.'view/inc/header.inc.html.php');
                 <i class="fas fa-plus ml-auto mr-2 cursor"></i>
             </div>
             <div class="d-flex mt-3">
-                <a class=" ml-3 mt-0" href="<?= WEB_ROUTE.'?controllers=admin&view=liste.admin'?>">Liste des admins</a>
+                <a class=" ml-3 mt-0" href="<?= WEB_ROUTE.'?controllers=admin&view=show.user'?>">Liste des utilisateurs</a>
                 <i class="fas fa-list-ul ml-auto mr-2 cursor"></i>
             </div>
-            <div class="d-flex mt-3">
-                <a class=" ml-3 mt-0" href="#">Modifier</a>
-                <i class="fas fa-edit ml-auto mr-2 cursor"></i>
-            </div>  
-            <div class="d-flex mt-3 ">
-                <a class=" ml-3 mt-0" href="#">Supprimer</a>
-                <i class="far fa-trash-alt ml-auto mr-2 cursor"></i>
-            </div> 
+          
+   
             <div class="d-flex mt-3">
                 <a class=" ml-3 mt-0" href="<?= WEB_ROUTE.'?controllers=admin&view=tableau.bord'?>">Tableau de bord</a>
                 <i class="fas fa-signal ml-auto mr-2 cursor"></i>

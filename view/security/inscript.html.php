@@ -16,30 +16,28 @@ if (est_admin()){
         <div class="alert alert-danger" style="height:40px" role="alert">
             <?= isset($arrayError['erreurConnexion']) ? $arrayError['erreurConnexion'] : '' ; ?>
         </div>
-    <?php endif ?>
+    <?php endif ?>  
    <form method="POST" action="<?=WEB_ROUTE?>" class="mt-4">
-                        <input type="hidden" name="controllers" value="security">
-                        <input type="hidden" name="action" value="inscription">
-        <div class="card" >
-            <div class="Accroche">
-                <h2>S'inscrire</h2>
-                <p>Pour tester votre niveau de culture générale</p>
-            </div>
-            
+            <input type="hidden" name="controllers" value="security">
+            <input type="hidden" name="action"  value="<?=isset($user['id']) ? 'modifier': 'inscription' ?>">
+            <input type="hidden" name="id"      value="<?=isset($user['id']) ? $user['id'] : ""; ?>">        
+            <div class="card" >
+                <div class="Accroche">
+                    <h2>S'inscrire</h2>
+                    <p>Pour tester votre niveau de culture générale</p>
+                </div>
                 <div class="card-body">
-
-
                 <div class="form-row ">
                     <div class="col-md-6">
                         <label for="">Prenom</label>
-                        <input type="text" class="form-control " name="prenom" placeholder="AAAA">
+                        <input type="text" class="form-control " name="prenom" placeholder="" value="<?=isset($user['prenom']) ? $user['prenom'] : ""; ?>">
                         <small class = "form-text text-danger">
                            <?= isset($arrayError['prenom']) ? $arrayError['prenom'] : '' ;?>
                         </small>
                     </div>
                     <div class=" col-md-6">
                         <label for="">Nom</label>
-                        <input type="text" class="form-control " name="nom" placeholder="BBBB">
+                        <input type="text" class="form-control " name="nom" placeholder=""  value="<?=isset($user['nom']) ? $user['nom'] : ""; ?>">
                         <small class = "form-text text-danger">
                                     <?= isset($arrayError['nom']) ? $arrayError['nom'] : '' ;?>
                                 </small>
@@ -47,7 +45,7 @@ if (est_admin()){
                 </div> 
                 <div class="col-md-">
                             <label for="">Login</label>
-                            <input type="text" class="form-control " name="login" placeholder="abc@gmail.com">
+                            <input type="text" class="form-control " name="login" placeholder=""  value="<?=isset($user['login']) ? $user['login'] : ""; ?>">
                             <small class = "form-text text-danger">
                                 <?= isset($arrayError['login']) ? $arrayError['login'] : '' ;?>
                             </small>
@@ -55,27 +53,21 @@ if (est_admin()){
                 <div class="form-row">
                     <div class="col-md-6">
                             <label for="">Password</label>
-                            <input type="password" class="form-control " name="password" placeholder=".........">
+                            <input type="password" class="form-control " name="password" placeholder=""  value="<?=isset($user['password']) ? $user['password'] : ""; ?>">
                             <small class = "form-text text-danger">
                             <?= isset($arrayError['password']) ? $arrayError['password'] : '' ;?>
                             </small>
                     </div> 
                     <div class="col-md-6">
                         <label for="">Confirm password</label>
-                        <input type="password" class="form-control " name="confirmpassword" placeholder=".........">
+                        <input type="password" class="form-control " name="confirmpassword" placeholder="">
                         <small class = "form-text text-danger">
                             <?= isset($arrayError['confirmpassword']) ? $arrayError['confirmpassword'] : '' ;?>
                         </small>
                     </div> 
                     
                 </div>
-                     
-
-
-                    <button type="submit" class="btn mt-4">Inscription</button>
-                    <div class="inscript">
-                        <a href="<?=WEB_ROUTE.'?controllers=security&view=connexion'?>" class=inscript-link> Connexion</a> 
-                    </div>
+                    <button type="submit" class="btn mt-4"><?=isset($user['id']) ? "Modifier" : "creer un compte"?></button>
                 </div>
         </div>
     </form>

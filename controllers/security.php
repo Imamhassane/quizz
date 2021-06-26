@@ -10,7 +10,11 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
        }elseif($_GET['view']=='deconnexion') {
            deconnexion();
         require(ROUTE_DIR.'view/security/connexion.html.php');
-       }
+       }elseif($_GET['view']=='modifier') {
+        $id=$_GET['id'];
+        $user = find_user_id($id);
+        require(ROUTE_DIR.'view/admin/creer.admin.html.php');
+        }
     }else {
         require(ROUTE_DIR.'view/security/connexion.html.php');
     }
@@ -20,16 +24,21 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
            connexion($_POST['login'],$_POST['password']);
        }elseif ($_POST['action']=='inscription') {
             unset($_POST['valider']);
+            unset($_POST['controllers']);
+            unset($_POST['action']);
+            unset($data['confirmpassword']);
+            inscription($_POST);
+        }elseif ($_POST['action']=='modifier') {
             unset($_POST['valider']);
             unset($_POST['controllers']);
             unset($_POST['action']);
             inscription($_POST);
-     
-    }
+            unset($data['confirmpassword']);
+            //header('location:'.WEB_ROUTE.'?controllers=admin&view=show.user');
+
+        }
     }
 }
-
-
 function connexion(string $login,string $password):void{
     $arrayError=array();
      validation_login($login,'login',$arrayError);
@@ -59,45 +68,49 @@ function connexion(string $login,string $password):void{
          header('location:'.WEB_ROUTE.'?controllers=security&view=connexion');
      }
 }
-
 function inscription(array $data ):void{
     $arrayError=array();
     extract($data);
         validation_login($login,'login',$arrayError);
-        if(login_exist($login)){
+        if(login_exist($login) && !isset($data['id'])){
             $arrayError['login'] = 'Ce login existe déjà';
             $_SESSION['arrayError']=$arrayError;
             header('location:'.WEB_ROUTE.'?controllers=security&view=inscription');
-            
-        }
+   
+     }
         validation_password($password,'password',$arrayError);
         validation_champ($prenom,'prenom',$arrayError);
         validation_champ($nom,'nom',$arrayError);
-        // validation_date_naissance($datenaiss,'datenaiss',$arrayError,$test);
         if ($password != $confirmpassword){
             $arrayError['confirmpassword'] = 'Les deux password ne sont pas identiques';
         }               
         if (form_valid($arrayError)) {
-            // appel du model
-           
-            // var_dump(file_get_contents(FILE_USERS, $json));
-             unset($data['confirmpassword']);
-            
+
             $data['role'] = est_admin()? "ROLE_ADMIN" : "ROLE_JOUEUR" ;
-            add_user($data);
+            
             if (est_admin()) {
                 $data['role'] = 'ROLE_ADMIN';
+                 header('location:'.WEB_ROUTE.'?controllers=admin&view=show.user');
                }else {
-                    $data['role'] = 'ROLE_JOUEUR';
-            }
-            if (est_admin()){
-                header('location:'.WEB_ROUTE.'?controllers=admin&view=liste.question');
-            }else{
-                header('location:'.WEB_ROUTE.'?controllers=security&view=connexion');
+                $data['role'] = 'ROLE_JOUEUR';
+                 header('location:'.WEB_ROUTE.'?controllers=security&view=connexion');
+            } 
 
+            if(isset($data['id'])){
+                if(est_admin()){
+                modif_user($data);
+                header('location:'.WEB_ROUTE.'?controllers=admin&view=show.user');
+                }
             }
-            
-        }else {
+
+            if(empty($data['id'])){
+                add_user($data);
+            }
+              
+
+          
+             
+        }else{
             if(est_admin()){
                 $_SESSION['arrayError']=$arrayError;
                 header('location:'.WEB_ROUTE.'?controllers=admin&view=creer.admin');
@@ -108,7 +121,16 @@ function inscription(array $data ):void{
             
          }
 }
+
 function deconnexion():void{
     unset($_SESSION['userConnect']);
 }
+/* function supprimer(){
+    $id = $_SESSION['id'];
+    $ok = suppression_user($id);
+    if($ok){
+        
+    }
+} */
+
 ?>

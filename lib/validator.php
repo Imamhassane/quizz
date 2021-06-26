@@ -35,12 +35,29 @@ function validation_password( $valeur, string $key , array &$arrayError, $min = 
         $arrayError[$key] = "le password doit être compris entre $min et $max";
     }
 }
-function validation_champ(string $valeur, string  $key,  &$arrayError){
+function validation_champ( $valeur, string  $key,  &$arrayError){
     if (est_vide($valeur)) {
         $arrayError[$key] = "Ce champ est obligatoire";
     }   
 }
+function validation_champs(  $valeur, string  $key,  &$arrayError){
+    if (est_vide($valeur)) {
+        $arrayError[$key] = "Ce champ est obligatoire";
+    }elseif(!is_numeric($valeur)){
+        $arrayError[$key] = "Ce champ doit être numérique";
 
+    }
+}
+function type_reponse( $valeur, string  $key,  &$arrayError){
+    if (est_vide($valeur)) {
+        $arrayError[$key] = "Veuillez donner le type de réponse";
+    }   
+}
+function reponse( $valeur, string  $key,  &$arrayError){
+    if(est_vide($valeur)) {
+        $arrayError[$key] = "Veuillez donner la réponse";
+    }   
+}
 
 
 ?>

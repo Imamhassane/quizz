@@ -14,7 +14,7 @@ require(ROUTE_DIR.'view/inc/header.inc.html.php');
 <div class="container col-md-8 mt-5 ">
     <?php if (isset($arrayError['erreurConnexion'])):?>
             <div class="alert alert-danger"  role="alert">
-                 <?= isset($arrayError['erreurConnexion']) ? $arrayError['erreurConnexion'] : '' ; ?>
+                 <?= $arrayError['erreurConnexion']; ?>
             </div>
     <?php endif ?>
     <form method="POST" action="<?=WEB_ROUTE?>">
