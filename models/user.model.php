@@ -71,6 +71,9 @@ function ajout_user(array $arrayUser){
     $json = json_encode($arrayUser);
     file_put_contents(FILE_USERS , $json);
 }
+
+
+
 function find_user_id(string $id):array{
   $json =file_get_contents(FILE_USERS);
   $arrayUser = json_decode($json , true);
@@ -81,30 +84,80 @@ function find_user_id(string $id):array{
   }
   return[];
 }
+
+
+function find_question_id(string $id):array{
+  $json =file_get_contents(FILE_QUESTIONS);
+  $arrayUser = json_decode($json , true);
+  foreach($arrayUser as $user ){
+    if ($user ['id'] == $id){
+      return $user;
+    }
+  }
+  return[];
+}
+
+
+
 function modif_user(array $new_user){
 $json = file_get_contents(FILE_USERS);
-$arrayUser = json_decode($json );
+$arrayUser = json_decode($json , true);
 
-foreach ($arrayUser as $key => $old_user) {
-    if ($user_old['id'] == $new_user['id']){
+foreach ($arrayUser as $key =>$old_user ) {
+    if ($old_user['id'] == $new_user['id']){
       $arrayUser[$key] = $new_user;
     }
   }
-  ajout_user($arrayUser);
+  $json = json_encode($arrayUser);
+  file_put_contents(FILE_USERS , $json);
 }  
 
-// function suppression_user(string $id):bool{
-//   $arrayUser=find_all_users();
-//   $users = [];
-//   $ok = false;
-//     foreach($users as $user){
-//         if ($user['id']!=$id) {
-//           $ok = true;
-//         }
-//     }
-//     return $ok;
-// }
 
+
+
+function find_all_questions(){
+  $json =file_get_contents(FILE_QUESTIONS);
+  // 2 convertir le json en tableau
+  return json_decode($json,true);
+}
+
+
+function suppression_question(string $id):bool{
+  $json =file_get_contents(FILE_QUESTIONS);
+  // 2 convertir le json en tableau
+  $arrayQuestion = json_decode($json,true); 
+  $tab = [];
+  $ok = false;
+    foreach( $arrayQuestion as $question){
+        if ($question['id'] == $id) {
+          $ok = true;
+        }else{
+          $tab [] = $question;
+        }
+    }
+    if($ok){
+      $json = json_encode($tab);
+      file_put_contents(FILE_QUESTIONS , $json);
+    }
+    return $ok;
+
+}
+
+
+
+
+function modif_question(array $new_user){
+  $json = file_get_contents(FILE_QUESTIONS);
+  $arrayQuestion = json_decode($json , true);
+  
+  foreach ($arrayQuestion as $key => $old_question  ) {
+      if ($old_question['id'] == $new_question['id']){
+        $arrayQuestion[$key] = $new_question;
+      }
+    }
+     $json = json_encode($arrayQuestion);
+      file_put_contents(FILE_QUESTIONS , $json);
+  }
 
 
 

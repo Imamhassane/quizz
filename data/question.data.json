@@ -1,8 +1,1 @@
-[{
-    "id": "62378407",
-    "question": "Quelle est la capitale du S\u00e9n\u00e9gal",
-    "nombre_de_points": "5 pts",
-    "type_de_reponse": "Donnez le type de r\u00e9ponse",
-    "reponse_possible": "3",
-    "reponse": "Tamba"
-}]
+[{"id":"101161179","question":"  Les langages de programmation sont :","nombre_de_points":"3","type_de_reponse":"choix_multiple","reponse_possible":"4","reponse":["Anglais","Php","Russe","Java"]}]

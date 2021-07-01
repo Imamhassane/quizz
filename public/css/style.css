@@ -150,6 +150,15 @@
                                 /* height: 580px; */
                                 margin-top: 3%;
                                 padding-left: 0px;
+                                
+                            }
+                            .pageconfirm {
+                                background-color: #fff;
+                                border-radius: 20px 20px 20px 20px;
+                                /* height: 580px; */
+                                margin-top: 3%;
+                                padding-left: 0px;
+                                height: 522px;
                             }
                             
                             .deconnexion {
@@ -206,8 +215,8 @@
                                 margin-top: 4%;
                                 margin-left: 2%;
                                 margin-right: 2%;
-                                border-radius: 15px 15px 15px 15px;
-                            }
+                                border-radius: 0;
+                                padding: 15px;                            }
                             
                             .questionliste {
                                 border: 1px solid #c90017;
@@ -370,6 +379,11 @@
                                     margin-left: 0%;
                                 }
                                 .pageListJoueur {
+                                    border-radius: 0;
+                                    margin-top: 0px;
+                                    margin-left: 0%;
+                                }
+                                .pageconfirm {
                                     border-radius: 0;
                                     margin-top: 0px;
                                     margin-left: 0%;

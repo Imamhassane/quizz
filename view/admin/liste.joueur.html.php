@@ -40,6 +40,7 @@
                 </div>
         </div>
     </div>
+    
     <style>
     .table td, .table th {
     padding: .75rem;

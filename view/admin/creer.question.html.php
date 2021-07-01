@@ -13,17 +13,17 @@ if (isset($_SESSION['arrayError'])){
                     <?php require_once(ROUTE_DIR.'view/inc/menu.inc.html.php');?>
                 </div>
             </div>
-        
+  
             <div class="pageAddQuestion col-md-8  ">
                 <h3 class="parametre mt-3">PARAMETER VOS QUESTIONS</h3>
             <form method="POST" action="<?=WEB_ROUTE?>"> 
             <input type="hidden" name="controllers" value="admin">
-            <input type="hidden" name="action" value="question">
+            <input type="hidden" name="action" value="<?=isset($question['id']) ? 'edit': 'question' ?>">
             <input type="hidden" name="id"      value="<?=isset($question['id']) ? $question['id'] : ""; ?>">        
                     <div class="questionliste">
                         <div class="form-group row mt-4 ml-3">
                             <label for="" class="mt-4">Question</label>
-                            <textarea name="question"  cols="30" rows="2" class="ml-2" ><?= isset($_SESSION['question']) ? $_SESSION['question'] : '' ?></textarea>
+                            <textarea name="question"  cols="30" rows="2" class="ml-2" ><?=isset($question['question']) ? $question['question'] : ""; ?> <?= isset($_SESSION['question']) ? $_SESSION['question'] : '' ?></textarea>
                         </div>
                         <small class = "form-text text-danger ml-3">
                                 <?= isset($arrayError['question']) ? $arrayError['question'] : '' ;?>
@@ -34,27 +34,32 @@ if (isset($_SESSION['arrayError'])){
                             <div class="form-row align-items-center">
                                 <label for="" class="">Nombre de points</label>
                                 <div class="col-auto my-1">
-                                    <input type="text" name="nombre_de_points" id="input" class="form-control number-type" value="<?= isset($_SESSION['nombre_de_points']) ? $_SESSION['nombre_de_points'] : '' ?>" min="{5"} max="" >    
+                                    <input type="number" name="nombre_de_points" id="input" class="form-control number-type" value="<?=isset($question['nombre_de_points']) ? $question['nombre_de_points'] : ""; ?><?= isset($_SESSION['nombre_de_points']) ? $_SESSION['nombre_de_points'] : '' ?>" min="{5"} max="" >    
                                 </div>
                             </div>
                         </div>
                         <small class = "form-text text-danger ml-3">
                                 <?= isset($arrayError['nombre_de_points']) ? $arrayError['nombre_de_points'] : '' ;?>
                         </small>
+                       <?php $tab =['Text','simple','choix_multiple']; 
+                       
+                       ?>
                         <div class=" form-group row mt-5 ml-3 ">
                             <label for="" class="mt-2">Type de réponse</label>
                             <select class="form-select ml-2" aria-label="Disabled select example" name="type_de_reponse" >
-                                <option selected>Donnez le type de réponse</option>
-                                <option value="Text">Text</option>
-                                <option value="Chekhbox">Chekhbox</option>
-                                <option value="radio">radio</option>
+                                <option> <?=isset($question['type_de_reponse']) ? $question['type_de_reponse'] : ""; ?><?= isset($_SESSION['type_de_reponse']) ? $_SESSION['type_de_reponse'] : '' ?></option>
+                                <option value="Text" >Text</option>
+                                <option value="simple">simple</option>
+                                <option value="choix_multiple">choix multiple</option>
+
                             </select>
-                              
-                        </div>
+                        </div> 
+                       
+                    
                         <div class=" form-group row mt-5 ml-3 ">
                             <label for="" class="mt-3">Nombre de réponse possible</label>
                             <div class="col-auto my-1">
-                                <input type="text" name="reponse_possible" id="input" class="form-control number-type" value="<?= isset($_SESSION['reponse_possible']) ? $_SESSION['reponse_possible'] : '' ?>" min="{5"} max="" step=""  title="">    
+                                <input type="number" name="reponse_possible" id="input" class="form-control number-type" value="<?=isset($question['reponse_possible']) ? $question['reponse_possible'] : ""; ?><?= isset($_SESSION['reponse_possible']) ? $_SESSION['reponse_possible'] : '' ?>" min="{5"} max="" step=""  title="">    
                             </div>
                             <div class="btn-plus"> 
                                 <button type="submit" name="plus"  class="btn mt-2">+</button>
@@ -69,15 +74,17 @@ if (isset($_SESSION['arrayError'])){
                                 </small>
                         <?php endif ?>
                        
-
+                        
 
                         <?php $plusInput = $_SESSION['plus']?>
+                        <?php $tabReponse = []; ?>
+
                         <?php for ($i=1 ; $i<= $plusInput; $i++) :?>
                         
                         <div class="form-group row mt-5 ml-3">
                             <label for="" class="mt-2">Réponse<?=$i?></label>
-                            <textarea name="reponse<?=$i?>" cols="30" rows="2" class="ml-2 typereponse"></textarea>
-                            <div class="form-check ml-2 ">
+                            <textarea name="reponse[]" cols="30" rows="2" class="ml-2 "></textarea>
+                            <!-- <div class="form-check ml-2 ">
                                 <label class="form-check-label">
                                 <input type="radio" class="form-check-input" name="radio" id="" value="" >
                               </label>
@@ -86,7 +93,7 @@ if (isset($_SESSION['arrayError'])){
                               <label class="form-check-label">
                                 <input type="checkbox" class="form-check-input" name="checkbox" id="" value="" >
                               </label>
-                            </div>
+                            </div> -->
                         
                         </div>
                         <small class = "form-text text-danger ml-3 mb-2">
@@ -101,9 +108,11 @@ if (isset($_SESSION['arrayError'])){
                             unset ($_SESSION['reponse_possible']);
                             unset($_SESSION['question']);
                             unset ($_SESSION['nombre_de_points']);
+                            unset ($_SESSION['type_de_reponse']);
+
                         }
                         ?>
-                            <a href=""><button type="submit" name="save" class="btn mt- mr-2">Enregistrer</button></a>
+                            <a href=""><button type="submit" name="save" class="btn mt- mr-2"><?=isset($question['id']) ? "Modifier" : "Enregistrer"?></button></a>
                     </div>
              </form> 
             </div>

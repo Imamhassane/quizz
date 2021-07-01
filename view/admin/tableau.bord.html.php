@@ -10,13 +10,37 @@
         <div class="pageListJoueur col-md-8 ">
                             
                <h2 class="text-center mt-5">TABLEAU DE BORD</h2>
+        <?php 
+            $json=file_get_contents(FILE_USERS);
+            $arrayUser= json_decode($json,true); 
 
+            $json=file_get_contents(FILE_QUESTIONS);
+            $arrayQuestion= json_decode($json,true); 
+
+            $cptadmin =  $cptjoueur = $cptquestion = 0;
+
+            foreach ($arrayUser as $user){
+               
+                if($user['role']== 'ROLE_ADMIN'){
+                    $cptadmin++;
+                }elseif($user['role']== 'ROLE_JOUEUR'){
+                    $cptjoueur++;
+                }
+            }
+            foreach ($arrayQuestion as $question){
+               
+                if($question['question']){
+                    $cptquestion++;
+                }
+            }
+           ?>
+              
             <div class="row p-0">
                 <div class="column ">
                     <div class="card">
                         <div class="d-flex justify-content-between mt-2">
                             <h3>Nombre d'admin</h3>
-                            <p>14</p>
+                            <p class = "mr-2"><?=$cptadmin?></p>
                             <i class="fas fa-user-lock"></i>
                         </div>
                     </div>
@@ -26,7 +50,7 @@
                     <div class="card">
                         <div class="d-flex justify-content-between mt-2">
                             <h3>Nombre de joueur</h3>
-                            <p>254</p>
+                            <p class = "mr-4"><?=$cptjoueur?></p>
                             <i class="fas fa-users"></i>
                         </div>
                     </div>
@@ -35,16 +59,14 @@
                 <div class="column ">
                     <div class="card">
                         <div class="d-flex justify-content-between mt-2">
-                            <h3>Nombre de visiteur</h3>
-                            <p>437</p>
-                            <i class="fas fa-eye"></i>
+                            <h3>Nombre de question</h3>
+                            <p class = "mr-5"><?=$cptquestion?></p>
+                            <i class="fa fa-question" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
             </div>  
-                
-
-
+         
         </div>
     </div>
   <style>

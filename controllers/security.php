@@ -125,12 +125,5 @@ function inscription(array $data ):void{
 function deconnexion():void{
     unset($_SESSION['userConnect']);
 }
-/* function supprimer(){
-    $id = $_SESSION['id'];
-    $ok = suppression_user($id);
-    if($ok){
-        
-    }
-} */
 
 ?>

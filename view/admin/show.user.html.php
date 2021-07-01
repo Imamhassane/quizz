@@ -28,8 +28,7 @@
                             <td><?=$user['prenom'].' '.$user['nom']?></td>
                             <td><?=$user['role']?></td>
                             <td>
-                                <a name="" id="" class="btn btn1 " href="#" role="button">Supprimer <i class="far fa-trash-alt  "></i></a>
-                                <a name="" id="" class="btn btn-info" href="<?= WEB_ROUTE.'?controllers=security&view=modifier&id='.$user['id']?>" role="button">Modifier <i class="fas fa-edit "></i></a>
+                                <a name="" id="" class="btn btn1 mr-4" href="<?= WEB_ROUTE.'?controllers=security&view=modifier&id='.$user['id']?>" role="button">Modifier <i class="fas fa-edit "></i></a>
                             </td>
                         </tr>
                         <?php endif ?>
@@ -51,7 +50,7 @@
         padding: 10px;
     }
     .btn1{
-        background-color: #c90017;
+        background-color: gray;
         color: #fff;
 
     }
