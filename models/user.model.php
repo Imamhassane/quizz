@@ -86,7 +86,7 @@ function find_user_id(string $id):array{
 }
 
 
-function find_question_id(string $id):array{
+function find_question_id( $id):array{
   $json =file_get_contents(FILE_QUESTIONS);
   $arrayUser = json_decode($json , true);
   foreach($arrayUser as $user ){
@@ -146,7 +146,7 @@ function suppression_question(string $id):bool{
 
 
 
-function modif_question(array $new_user){
+function modif_question(array $new_question){
   $json = file_get_contents(FILE_QUESTIONS);
   $arrayQuestion = json_decode($json , true);
   

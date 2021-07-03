@@ -84,36 +84,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
               
             }
           
-        }/* elseif($_POST['action']=='edit'){ 
-        if(isset($_POST['save'])){
-            unset($_POST['controllers']);
-            unset($_POST['action']); 
-            unset($_POST['save']);
-            $inputPlus = $_POST['reponse_possible'];
-            $_SESSION['plus'] = $inputPlus;
+        }elseif($_POST['action']=='edit'){ 
+            if(isset($_POST['save'])){
+                unset($_POST['controllers']);
+                unset($_POST['action']); 
+                unset($_POST['save']);
+                question($_POST);
+                $value=$_SESSION['id'];
+                header('location:'.WEB_ROUTE.'?controllers=admin&view=liste.question'); 
+            }elseif(isset($_POST['plus'])  && (empty($_POST['reponse_possible']))){
+                $arrayError['test'] = "Le nombre de réponse possible est obligatoire";
+                $_SESSION['arrayError'] = $arrayError;
+                $_SESSION['question']  = $_POST['question'];
 
-            $_SESSION['arrayError'] = $arrayError;
+                $_SESSION['nombre_de_points'] = $_POST['nombre_de_points'];
 
-            $_SESSION['question']  = $_POST['question'];
+                $_SESSION['type_de_reponse']   = $_POST['type_de_reponse'];
+                
+                $value=$_SESSION['id'];
+                header('location:'.WEB_ROUTE.'?controllers=admin&view=edit&id='.$value['id']);
+            } elseif(isset($_POST['plus']) && (!empty($_POST['reponse_possible']))){
+                $_SESSION['question']  = $_POST['question'];
 
-            $_SESSION['nombre_de_points'] = $_POST['nombre_de_points'];
+                $_SESSION['nombre_de_points'] = $_POST['nombre_de_points'];
 
-            $_SESSION['reponse_possible']   = $_POST['reponse_possible'];
-            $_SESSION['type_de_reponse']   = $_POST['type_de_reponse'];
-            
-            question($_POST);
-        }elseif(isset($_POST['plus']) && (empty($_POST['reponse_possible']))){
-            $_SESSION['id']=$_GET['id'];
-            $id = $_SESSION['id'];
-            $question = find_question_id();
-            header('location:'.WEB_ROUTE.'?controllers=admin&view=edit&id='.$question['id']);
-        }elseif(isset($_POST['plus']) && (!empty($_POST['reponse_possible']))){
-            $_SESSION['id']=$_GET['id'];
-            $id = $_SESSION['id'];
-            $question = find_question_id();
-            header('location:'.WEB_ROUTE.'?controllers=admin&view=edit&id='.$question['id']);
-        }
-        } */
+                $_SESSION['type_de_reponse']   = $_POST['type_de_reponse'];
+                
+                $value=$_SESSION['id'];
+                header('location:'.WEB_ROUTE.'?controllers=admin&view=edit&id='.$value['id']);
+            }
+        } 
     }
 }     
    

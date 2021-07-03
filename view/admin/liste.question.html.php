@@ -13,11 +13,42 @@
             <h3 class="parametre mt-2">PARAMETER VOS QUESTIONS</h3>
             <div class="questionlist">
                  <!-- <form > -->
+               <?php 
+                            $json=file_get_contents(FILE_QUESTIONS);
+                            $arrayQuestion= json_decode($json,true); 
+                        $arrayQuestion =[];
+                        $nbrPage =0;
+                        $page=1;
+                        $nbrElement = 5;
+                        $suivant=2;
+
+                     if (!isset($_GET['page'])) {
+                        $page=1;
+                         // $_SESSION['user_admin'] =  $admin_user;
+                         $_SESSION['arrayQuestion']= $arrayQuestion;
+                         $nbrPage = nombrePageTotal( $_SESSION['arrayQuestion'], $nbrElement);
+                         $arrayQuestion= get_element_to_display( $_SESSION['user_admin'],$page, $nbrElement);
+                       
+                     }
+                  
+                        if (isset($_GET['page'])) {
+                           
+                         $page=$_GET['page'];
+                         $suivant=$page+1;
+                         $precednt=$page-1;
+                             if (isset($_SESSION['user_admin'])) {
+                                // $_SESSION['user_admin'] =  $admin_user;
+                                $_SESSION['arrayQuestion']= $arrayQuestion;
+
+                                 $nbrPage = nombrePageTotal( $_SESSION['arrayQuestion'], $nbrElement);
+                                 $arrayQuestion= get_element_to_display( $_SESSION['user_admin'],$page, $nbrElement);
+                               
+                             }
+     
+                         }
                
-                <?php 
-                    $json=file_get_contents(FILE_QUESTIONS);
-                    $arrayQuestion= json_decode($json,true);        
-                ?> 
+               ?>
+               
                 <div class="">
                     <?php for ($i = 0 ; $i <= count($arrayQuestion)-1; $i++ ):?>
                         <?php $question = $arrayQuestion[$i]?>
@@ -55,9 +86,19 @@
 
 
             </div>
-            <div class="suivant mt-2">
+            <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
+                <a name="" id="" class="btn btn-danger disabled  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$precednt;  ?>" role="button">Precedent</a> 
+                <?php else: ?>
+                    <a name="" id="" class="btn btn-danger  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$precednt;  ?>" role="button">Precedent</a> 
+                 <?php endif ?>
+                 <?php if($_GET['page'] > $nbrPage-1): ?>
+                <a name="" id="" class="btn btn-danger suiv disabled  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$suivant; ?>" role="button">Suivant</a>
+                <?php else: ?>
+                    <a name="" id="" class="btn btn-danger suiv   mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$suivant; ?>" role="button">Suivant</a>
+                 <?php endif ?>
+         <!--    <div class="suivant mt-2">
                 <button type="submit" class="btn mt-4 mr-2">Suivant</button>
-            </div>
+            </div> -->
 
         </div>
     </div>
