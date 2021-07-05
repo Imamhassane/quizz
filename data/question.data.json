@@ -11,8 +11,9 @@
             "Russe",
             "Java"
         ]
-    }, {
-        "id": "101161179",
+    },
+    {
+        "id": "10116sz1179",
         "question": "  Les langages de programmation sont :",
         "nombre_de_points": "3",
         "type_de_reponse": "choix_multiple",
@@ -23,8 +24,9 @@
             "Russe",
             "Java"
         ]
-    }, {
-        "id": "101161179",
+    },
+    {
+        "id": "10116qqsz1179",
         "question": "  Les langages de programmation sont :",
         "nombre_de_points": "3",
         "type_de_reponse": "choix_multiple",
@@ -35,557 +37,96 @@
             "Russe",
             "Java"
         ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
+    },
+    {
+        "id": "79614785",
+        "question": "   fdd",
+        "nombre_de_points": "4",
+        "type_de_reponse": "simple",
+        "reponse_possible": "2",
         "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
+            ",lll",
+            "kllp\r\n"
         ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
+    },
+    {
+        "id": "15079388",
+        "question": "   lhi",
+        "nombre_de_points": "4",
+        "type_de_reponse": "text",
+        "reponse_possible": "1",
         "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
+            "aaaaaaaaa"
         ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
+    },
+    {
+        "id": "75901560",
+        "question": "    lhi",
+        "nombre_de_points": "4",
+        "type_de_reponse": "text",
+        "reponse_possible": "1",
         "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
+            "hhhhhhhhh"
         ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
+    },
+    {
+        "id": "109368310",
+        "question": "     lhi",
+        "nombre_de_points": "4",
+        "type_de_reponse": "text",
+        "reponse_possible": "1",
         "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
+            "lllllllllllll"
         ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
+    },
+    {
+        "id": "83273609",
+        "question": "      lhi",
+        "nombre_de_points": "4",
+        "type_de_reponse": "text",
+        "reponse_possible": "1",
         "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
+            "zzzzzzzzzzzzzzz"
         ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
+    },
+    {
+        "id": "104868264",
+        "question": "       lhi",
+        "nombre_de_points": "4",
+        "type_de_reponse": "text",
+        "reponse_possible": "1",
         "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
+            "rrrrrrrrrrrrrrr"
         ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
+    },
+    {
+        "id": "75371959",
+        "question": "        lhi",
+        "nombre_de_points": "4",
+        "type_de_reponse": "text",
+        "reponse_possible": "1",
         "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
+            "yyyyyyyyy"
         ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
+    },
+    {
+        "id": "72999426",
+        "question": "         lhi",
+        "nombre_de_points": "4",
+        "type_de_reponse": "text",
+        "reponse_possible": "1",
         "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
+            "llllllllllllllll"
         ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
+    },
+    {
+        "id": "119130793",
+        "question": "          lhi",
+        "nombre_de_points": "4",
+        "type_de_reponse": "text",
+        "reponse_possible": "1",
         "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
-        ]
-    }, {
-        "id": "101161179",
-        "question": "  Les langages de programmation sont :",
-        "nombre_de_points": "3",
-        "type_de_reponse": "choix_multiple",
-        "reponse_possible": "4",
-        "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
+            "mmmmmmmm"
         ]
     }
 ]

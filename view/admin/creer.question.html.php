@@ -48,7 +48,7 @@ if (isset($_SESSION['arrayError'])){
                             <label for="" class="mt-2">Type de réponse</label>
                             <select class="form-select ml-2" aria-label="Disabled select example" name="type_de_reponse" >
                                 <option> <?=isset($question['type_de_reponse']) ? $question['type_de_reponse'] : ""; ?><?= isset($_SESSION['type_de_reponse']) ? $_SESSION['type_de_reponse'] : '' ?></option>
-                                <option value="Text" >Text</option>
+                                <option value="text" >Text</option>
                                 <option value="simple">simple</option>
                                 <option value="choix_multiple">choix multiple</option>
 
@@ -77,12 +77,10 @@ if (isset($_SESSION['arrayError'])){
                         
 
                         <?php $plusInput = $_SESSION['plus']?>
-                        <?php $tabReponse = []; ?>
-
                         <?php for ($i=1 ; $i<= $plusInput; $i++) :?>
                         
                         <div class="form-group row mt-5 ml-3">
-                            <label for="" class="mt-2">Réponse<?=$i?></label>
+                            <label for="" class="mt-2">Réponse <?=$i?></label>
                             <textarea name="reponse[]" cols="30" rows="2" class="ml-2 "></textarea>
                             <!-- <div class="form-check ml-2 ">
                                 <label class="form-check-label">
@@ -112,7 +110,7 @@ if (isset($_SESSION['arrayError'])){
 
                         }
                         ?>
-                            <a href=""><button type="submit" name="save" class="btn mt- mr-2"><?=isset($question['id']) ? "Modifier" : "Enregistrer"?></button></a>
+                            <a href=""><button type="submit" name="save" class="btn mb-2 mr-1"><?=isset($question['id']) ? "Modifier" : "Enregistrer"?></button></a>
                     </div>
              </form> 
             </div>
@@ -120,9 +118,10 @@ if (isset($_SESSION['arrayError'])){
     <style>
      .number-type{
                             
-                            background-color: #dadcdb;
-                            border-bottom: 2px solid #c90017;
-                            border-left: none;
-                            border-top: none;
-                        }
+                background-color: #dadcdb;
+                border-bottom: 2px solid #c90017;
+                border-left: none;
+                border-top: none;
+                
+            }
     </style>

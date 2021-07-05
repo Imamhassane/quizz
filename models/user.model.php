@@ -18,6 +18,31 @@ function find_all_users(){
   // 2 convertir le json en tableau
   return json_decode($json,true);
 }
+function find_all_joueurs(){
+  $json=file_get_contents(FILE_USERS);
+  $arrayUser= json_decode($json,true);
+
+  foreach ($arrayUser as $user) {
+    if ($user['role'] == 'ROLE_JOUEUR') {
+      $joueur_user[]= $user;
+
+    }
+  }
+  return $joueur_user;
+}
+
+function find_all_admins(){
+  $json=file_get_contents(FILE_USERS);
+  $arrayUser= json_decode($json,true);
+  foreach ($arrayUser as $user) {
+    if ($user['role'] == 'ROLE_ADMIN') {
+      $admin_user[]= $user;
+
+    }
+  }
+  return $admin_user;
+}
+
 function find_login_password(string $login, string $password){
     $arrayUser=find_all_users();
     foreach($arrayUser as $user){
@@ -149,7 +174,6 @@ function suppression_question(string $id):bool{
 function modif_question(array $new_question){
   $json = file_get_contents(FILE_QUESTIONS);
   $arrayQuestion = json_decode($json , true);
-  
   foreach ($arrayQuestion as $key => $old_question  ) {
       if ($old_question['id'] == $new_question['id']){
         $arrayQuestion[$key] = $new_question;

@@ -70,7 +70,7 @@ function nombrePageTotal($array, $nombreElement): int {
     return $nombrePage;
 }
 
-function get_element_to_display($array, int $page, int $nombreElement): array {
+function get_element_to_display($array,  $page, int $nombreElement): array {
 $arrayElement = [];
 $indiceDepart = ($page*$nombreElement) - $nombreElement;
 $limitElement = $page * $nombreElement;

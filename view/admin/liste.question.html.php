@@ -13,56 +13,24 @@
             <h3 class="parametre mt-2">PARAMETER VOS QUESTIONS</h3>
             <div class="questionlist">
                  <!-- <form > -->
-               <?php 
-                            $json=file_get_contents(FILE_QUESTIONS);
-                            $arrayQuestion= json_decode($json,true); 
-                        $arrayQuestion =[];
-                        $nbrPage =0;
-                        $page=1;
-                        $nbrElement = 5;
-                        $suivant=2;
-
-                     if (!isset($_GET['page'])) {
-                        $page=1;
-                         // $_SESSION['user_admin'] =  $admin_user;
-                         $_SESSION['arrayQuestion']= $arrayQuestion;
-                         $nbrPage = nombrePageTotal( $_SESSION['arrayQuestion'], $nbrElement);
-                         $arrayQuestion= get_element_to_display( $_SESSION['user_admin'],$page, $nbrElement);
-                       
-                     }
-                  
-                        if (isset($_GET['page'])) {
-                           
-                         $page=$_GET['page'];
-                         $suivant=$page+1;
-                         $precednt=$page-1;
-                             if (isset($_SESSION['user_admin'])) {
-                                // $_SESSION['user_admin'] =  $admin_user;
-                                $_SESSION['arrayQuestion']= $arrayQuestion;
-
-                                 $nbrPage = nombrePageTotal( $_SESSION['arrayQuestion'], $nbrElement);
-                                 $arrayQuestion= get_element_to_display( $_SESSION['user_admin'],$page, $nbrElement);
-                               
-                             }
-     
-                         }
                
-               ?>
                
                 <div class="">
-                    <?php for ($i = 0 ; $i <= count($arrayQuestion)-1; $i++ ):?>
-                        <?php $question = $arrayQuestion[$i]?>
+                    <?php for ($i = 0 ; $i <= count($data)-1; $i++ ):?>
+                        <?php $question = $data[$i]?>
 
                         <div>
                             <span class="ml-2 mt-2" ><?=($i+1).':'.' '.$question['question']?></span> 
-                            <a name="" id="" class="btn btn1 mr-4" href="<?=WEB_ROUTE.'?controllers=admin&view=edit&id='.$question['id']?>" role="button"> <i class="fas fa-edit "></i></a>
-                            <a name="" id="" class="btn btn1 mr-4"  href="<?=WEB_ROUTE.'?controllers=admin&view=supprimer&id='.$question['id']?>" role="button"> <i class="far fa-trash-alt"></i></a>
+                            <a name="" id="" class="btn btn1 mr-0" href="<?=WEB_ROUTE.'?controllers=admin&view=edit&id='.$question['id']?>" role="button"> <i class="fas fa-edit "></i></a>
+                            <a name="" id="" class="btn btn1 mr-0"  href="<?=WEB_ROUTE.'?controllers=admin&view=supprimer&id='.$question['id']?>" role="button"> <i class="far fa-trash-alt"></i></a>
                         </div>
                             <label class="p-3 ml-5">
+                                        
                                 <?php if($question['reponse']){ ?>
                                     <?php foreach ($question['reponse'] as $res ):?>
                                         <?php if($question['type_de_reponse'] == 'text'):?>
-                                            <input type="text" class="form-check-input" name="" id="" value="" >
+                                            <input type="text" name="" id="input" class="form-control texte " value="" >    
+                                            <?=$res=''?>
                                         <?php endif ?>
                                         <?php if($question['type_de_reponse'] == 'simple'):?>
                                             <input type="radio" class="form-check-input" name="radio" id="" value="" >
@@ -73,6 +41,7 @@
                                         <?=$res.'</br>'?>
                                     <?php endforeach ?>
                                 <?php }?>
+                                       
                             </label>
                                        
                     <?php endfor ?>
@@ -86,19 +55,27 @@
 
 
             </div>
-            <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
-                <a name="" id="" class="btn btn-danger disabled  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$precednt;  ?>" role="button">Precedent</a> 
-                <?php else: ?>
-                    <a name="" id="" class="btn btn-danger  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$precednt;  ?>" role="button">Precedent</a> 
-                 <?php endif ?>
-                 <?php if($_GET['page'] > $nbrPage-1): ?>
-                <a name="" id="" class="btn btn-danger suiv disabled  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$suivant; ?>" role="button">Suivant</a>
-                <?php else: ?>
-                    <a name="" id="" class="btn btn-danger suiv   mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$suivant; ?>" role="button">Suivant</a>
-                 <?php endif ?>
-         <!--    <div class="suivant mt-2">
-                <button type="submit" class="btn mt-4 mr-2">Suivant</button>
-            </div> -->
+            
+                                            <?php
+                                                $json=file_get_contents(FILE_QUESTIONS);
+                                                $arrayQuestion= json_decode($json,true);
+                                             ?>
+                <div class="suivant mt-2">
+                        <?php if(($_GET['view'] == 'liste.question') && count($arrayQuestion) <= 5 ): ?>
+                            <a name="" id="" class="btn btn-red disabled  mt-2" href="<?=WEB_ROUTE.'?controllers=admin&view=liste.question'; ?>" role="button">Suivant</a>
+                        <?php endif ?>
+                        <?php if($_GET['page'] <= $nbrPage-1 && count($arrayQuestion) > 5 || $_GET['view'] == 'confirme'  ): ?>
+                            <a name="" id="" class="btn  btn-red mt-2" href="<?=WEB_ROUTE.'?controllers=admin&view=liste.question&page='.$suivant; ?>" role="button">Suivant</a>
+                        <?php endif ?>
+                    <div class="float-left ml-3">
+                        <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
+                            <a name="" id="" class="btn btn-red disabled  mt-2" href="<?=WEB_ROUTE.'?controllers=admin&view=liste.question&page='.$precednt;  ?>" role="button">Precedent</a> 
+                        <?php else: ?>
+                            <a name="" id="" class="btn btn-red  mt-2" href="<?=WEB_ROUTE.'?controllers=admin&view=liste.question&page='.$precednt;  ?>" role="button">Precedent</a> 
+                        <?php endif ?>
+                    </div>
+                </div>
+
 
         </div>
     </div>
@@ -118,4 +95,22 @@
 a:hover{
     color : #c90017
 }
+
+
+.btn-red{
+    background-color: #c90017;
+    color:#fff;
+}
+.suivant , a:hover{
+    color : #fff
+}
+
+.texte{
+                       
+                       background-color: #dadcdb;
+                       border-bottom: 2px solid #c90017;
+                       border-left: none;
+                       border-top: none;
+                       
+                   }
 </style>
