@@ -1,28 +1,36 @@
 [
     {
         "id": "101161179",
-        "question": "  Les langages de programmation sont :",
+        "question": "es langages ",
         "nombre_de_points": "3",
         "type_de_reponse": "choix_multiple",
         "reponse_possible": "4",
         "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
+            "Angla ",
+            "Ph ",
+            "Rus ",
+            "Jav "
+        ],
+        "checkbox": [
+            "bonne_r\u00e9ponse1",
+            "bonne_r\u00e9ponse3"
         ]
     },
     {
         "id": "10116sz1179",
-        "question": "  Les langages de programmation sont :",
+        "question": "  Les langages de programmation sont : ",
         "nombre_de_points": "3",
         "type_de_reponse": "choix_multiple",
         "reponse_possible": "4",
         "reponse": [
-            "Anglais",
-            "Php",
-            "Russe",
-            "Java"
+            "Anglais ",
+            "Php ",
+            "Russe ",
+            "Java "
+        ],
+        "checkbox": [
+            "bonne_r\u00e9ponse",
+            "bonne_r\u00e9ponse"
         ]
     },
     {
@@ -40,14 +48,17 @@
     },
     {
         "id": "79614785",
-        "question": "   fdd",
+        "question": "   fdd ",
         "nombre_de_points": "4",
         "type_de_reponse": "simple",
         "reponse_possible": "2",
         "reponse": [
-            ",lll",
-            "kllp\r\n"
-        ]
+            ",lll ",
+            "kllp\r\n ",
+            " ",
+            " "
+        ],
+        "radio": "la_bonne_r\u00e9ponse_est 2"
     },
     {
         "id": "15079388",

@@ -62,7 +62,7 @@ if (isset($_SESSION['arrayError'])){
                                 <input type="number" name="reponse_possible" id="input" class="form-control number-type" value="<?=isset($question['reponse_possible']) ? $question['reponse_possible'] : ""; ?><?= isset($_SESSION['reponse_possible']) ? $_SESSION['reponse_possible'] : '' ?>" min="{5"} max="" step=""  title="">    
                             </div>
                             <div class="btn-plus"> 
-                                <button type="submit" name="plus"  class="btn mt-2">+</button>
+                                <button type="submit" name="<?=isset($question['id']) ? "modif" : "plus"?>"  class="btn mt-2">+</button>
                             </div>
                         </div>
                          <small class = "form-text text-danger ml-3 mb-3 ">
@@ -73,25 +73,26 @@ if (isset($_SESSION['arrayError'])){
                                         <?= $arrayError['test']; ?>
                                 </small>
                         <?php endif ?>
-                       
-                        
 
-                        <?php $plusInput = $_SESSION['plus']?>
-                        <?php for ($i=1 ; $i<= $plusInput; $i++) :?>
-                        
+                        <?php $plusInput = isset($question['id']) ? $_SESSION['modif'] : $_SESSION['plus']?>
+                        <?php for ($i = 0 ; $i <= $plusInput-1; $i++) :?>
+                        <?php
+                            $json = file_get_contents(FILE_QUESTIONS);
+                            $arrayQuestion = json_decode($json , true);
+                         ?>
                         <div class="form-group row mt-5 ml-3">
-                            <label for="" class="mt-2">Réponse <?=$i?></label>
-                            <textarea name="reponse[]" cols="30" rows="2" class="ml-2 "></textarea>
-                            <!-- <div class="form-check ml-2 ">
+                            <label for="" class="mt-2">Réponse <?=$i+1?></label>
+                                <textarea name="reponse[]" cols="30" rows="2" class="ml-2 "><?=isset($question['reponse']) ? $question['reponse'][$i] : ""; ?> </textarea>
+                            <div class="form-check ml-2 ">
                                 <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="radio" id="" value="" >
+                                <input type="radio" class="form-check-input" name="radio" id="" value="la_bonne_réponse_est <?=$i+1?>" >
                               </label>
                             </div>
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="checkbox" id="" value="" >
+                                <input type="checkbox" class="form-check-input" name="checkbox[]" id="" value="la_bonne_réponse_est <?=$i+1?>" >
                               </label>
-                            </div> -->
+                            </div> 
                         
                         </div>
                         <small class = "form-text text-danger ml-3 mb-2">
@@ -110,7 +111,7 @@ if (isset($_SESSION['arrayError'])){
 
                         }
                         ?>
-                            <a href=""><button type="submit" name="save" class="btn mb-2 mr-1"><?=isset($question['id']) ? "Modifier" : "Enregistrer"?></button></a>
+                            <a href=""><button type="submit" name="<?=isset($question['id']) ? "save_modif" : "save"?>" class="btn mb-2 mr-1"><?=isset($question['id']) ? "Modifier" : "Enregistrer"?></button></a>
                     </div>
              </form> 
             </div>

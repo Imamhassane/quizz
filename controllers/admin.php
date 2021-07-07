@@ -48,81 +48,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 unset($_POST['save']);
                 $inputPlus = $_POST['reponse_possible'];
                 $_SESSION['plus'] = $inputPlus;
-
                 $_SESSION['arrayError'] = $arrayError;
-
                 $_SESSION['question']  = $_POST['question'];
-
                 $_SESSION['nombre_de_points'] = $_POST['nombre_de_points'];
-
                 $_SESSION['reponse_possible']   = $_POST['reponse_possible'];
                 $_SESSION['type_de_reponse']   = $_POST['type_de_reponse'];
-
                 question($_POST);
             }elseif(isset($_POST['plus']) && (empty($_POST['reponse_possible']))){
                 $arrayError['test'] = "Le nombre de réponse possible est obligatoire";
                 $_SESSION['arrayError'] = $arrayError;
-               
-
                 $_SESSION['question']  = $_POST['question'];
-
                 $_SESSION['nombre_de_points'] = $_POST['nombre_de_points'];
-
                 $_SESSION['type_de_reponse']   = $_POST['type_de_reponse'];
-
-                
-
                 header('location:'.WEB_ROUTE.'?controllers=admin&view=creer.question');
             }elseif(isset($_POST['plus']) && (!empty($_POST['reponse_possible']))){
                 $inputPlus = $_POST['reponse_possible'];
                 $_SESSION['plus'] = $inputPlus;
-
                 $_SESSION['arrayError'] = $arrayError;
-
                 $_SESSION['question']  = $_POST['question'];
-
                 $_SESSION['nombre_de_points'] = $_POST['nombre_de_points'];
-
                 $_SESSION['reponse_possible']   = $_POST['reponse_possible'];
-
                 $_SESSION['type_de_reponse']   = $_POST['type_de_reponse'];
-                header('location:'.WEB_ROUTE.'?controllers=admin&view=creer.question');
-              
+                header('location:'.WEB_ROUTE.'?controllers=admin&view=creer.question');  
             }
-          
         }elseif($_POST['action'] == 'edit'){ 
-            if(isset($_POST['save'])){
+            if(isset($_POST['save_modif'])){
                 unset($_POST['controllers']);
                 unset($_POST['action']); 
-                unset($_POST['save']);
+                unset($_POST['save_modif']);
                 question($_POST);
                 header('location:'.WEB_ROUTE.'?controllers=admin&view=liste.question'); 
-            } elseif(isset($_POST['plus'])  && (empty($_POST['reponse_possible']))){
-                $arrayError['test'] = "Le nombre de réponse possible est obligatoire";
-                $_SESSION['arrayError'] = $arrayError;
+            }elseif(isset($_POST['modif'])){
+                $inputPlus = $_POST['reponse_possible'];
+                $_SESSION['modif'] = $inputPlus;
                 $_SESSION['question']  = $_POST['question'];
-
                 $_SESSION['nombre_de_points'] = $_POST['nombre_de_points'];
-
                 $_SESSION['type_de_reponse']   = $_POST['type_de_reponse'];
-                
+                $_SESSION['reponse_possible']   = $_POST['reponse_possible'];
                 $question = $_SESSION['id'];
-                header('location:'.WEB_ROUTE.'?controllers=admin&view=edit&id='.$question['id']);
-
-                    header('location:'.WEB_ROUTE.'?controllers=admin&view=edit&id='.$value['id']);
-                
-            } elseif(isset($_POST['plus']) && (!empty($_POST['reponse_possible']))){
-                $_SESSION['question']  = $_POST['question'];
-
-                $_SESSION['nombre_de_points'] = $_POST['nombre_de_points'];
-
-                $_SESSION['type_de_reponse']   = $_POST['type_de_reponse'];
-                
-                   
-                    $question = $_SESSION['id'];
-                    header('location:'.WEB_ROUTE.'?controllers=admin&view=edit&id='.$question['id']);
-
-                    header('location:'.WEB_ROUTE.'?controllers=admin&view=edit&id='.$value['id']);
+                header('location:'.WEB_ROUTE.'?controllers=admin&view=liste.question'); 
             } 
         } 
     }
@@ -151,8 +115,13 @@ function question (array $data ):void{
                 header('location:'.WEB_ROUTE.'?controllers=admin&view=liste.question');        
             }
         }else{
-        $_SESSION['arrayError']=$arrayError;
-        header('location:'.WEB_ROUTE.'?controllers=admin&view=creer.question');
+            if(isset($data['id'])){
+                    $_SESSION['arrayError']=$arrayError;
+                    header('location:'.WEB_ROUTE.'?controllers=admin&view=edit&id='.$question['id']);
+            }else{
+                $_SESSION['arrayError']=$arrayError;
+                header('location:'.WEB_ROUTE.'?controllers=admin&view=creer.question');
+            }
      }
 }
 
