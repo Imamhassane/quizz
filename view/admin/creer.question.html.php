@@ -74,25 +74,26 @@ if (isset($_SESSION['arrayError'])){
                                 </small>
                         <?php endif ?>
 
-                        <?php $plusInput = isset($question['id']) ? $_SESSION['modif'] : $_SESSION['plus']?>
-                        <?php for ($i = 0 ; $i <= $plusInput-1; $i++) :?>
-                        <?php
+                        <?php $plusInput = $_SESSION['plus']?>
+                         <?php
                             $json = file_get_contents(FILE_QUESTIONS);
                             $arrayQuestion = json_decode($json , true);
                          ?>
+                        <?php for ($i = 0 ; $i <= $plusInput-1; $i++) :?>
+                       
                         <div class="form-group row mt-5 ml-3">
                             <label for="" class="mt-2">Réponse <?=$i+1?></label>
-                                <textarea name="reponse[]" cols="30" rows="2" class="ml-2 "><?=isset($question['reponse']) ? $question['reponse'][$i] : ""; ?> </textarea>
+                                <textarea name="reponse[]" cols="30" rows="2" class="ml-2 "> </textarea>
                             <div class="form-check ml-2 ">
                                 <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="radio" id="" value="la_bonne_réponse_est <?=$i+1?>" >
+                                <input type="radio" class="form-check-input" name="radio" id="" value="" >
                               </label>
                             </div>
                             <div class="form-check">
                               <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="checkbox[]" id="" value="la_bonne_réponse_est <?=$i+1?>" >
+                                <input type="checkbox" class="form-check-input" name="checkbox" id="" value="" >
                               </label>
-                            </div> 
+                            </div>  
                         
                         </div>
                         <small class = "form-text text-danger ml-3 mb-2">
@@ -111,6 +112,35 @@ if (isset($_SESSION['arrayError'])){
 
                         }
                         ?>
+
+                        <?php if (isset($question['reponse'])):?>
+                            <?php $test = $question['reponse_possible']?>
+
+                         <?php for ($i = 0 ; $i <= $test-1; $i++) :?>
+                            <?php
+                                $json = file_get_contents(FILE_QUESTIONS);
+                                $arrayQuestion = json_decode($json , true);
+                            ?>
+                        <div class="form-group row mt-5 ml-3">
+                                <label for="" class="mt-2">Réponse <?=$i+1?></label>
+                                <textarea name="reponse[]" cols="30" rows="2" class="ml-2 "><?=isset($question['reponse']) ? $question['reponse'][$i] : ""; ?> </textarea>
+                           
+                            <div class="form-check ml-2 ">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="radio" id="" value="" >
+                                </label>
+                            </div>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" name="checkbox" id="" value="" >
+                              </label>
+                            </div> 
+                        </div>
+                        <?php endfor ?>
+                        <?php endif ?>
+
+
+
                             <a href=""><button type="submit" name="<?=isset($question['id']) ? "save_modif" : "save"?>" class="btn mb-2 mr-1"><?=isset($question['id']) ? "Modifier" : "Enregistrer"?></button></a>
                     </div>
              </form> 

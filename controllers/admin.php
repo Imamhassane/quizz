@@ -79,14 +79,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 question($_POST);
                 header('location:'.WEB_ROUTE.'?controllers=admin&view=liste.question'); 
             }elseif(isset($_POST['modif'])){
-                $inputPlus = $_POST['reponse_possible'];
+                $inputPlus = $_SESSION['reponse_possible'];
                 $_SESSION['modif'] = $inputPlus;
                 $_SESSION['question']  = $_POST['question'];
                 $_SESSION['nombre_de_points'] = $_POST['nombre_de_points'];
                 $_SESSION['type_de_reponse']   = $_POST['type_de_reponse'];
                 $_SESSION['reponse_possible']   = $_POST['reponse_possible'];
-                $question = $_SESSION['id'];
-                header('location:'.WEB_ROUTE.'?controllers=admin&view=liste.question'); 
+                $value = $_SESSION['id'];
+                header('location:'.WEB_ROUTE.'?controllers=admin&view=edit&id='.$value['id']);
             } 
         } 
     }
