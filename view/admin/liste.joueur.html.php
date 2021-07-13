@@ -40,7 +40,7 @@
                             <a name="" id="" class="btn btn-red disabled  " href="<?=WEB_ROUTE.'?controllers=admin&view=liste.joueur'; ?>" role="button">Suivant</a>
                         <?php endif ?>
 
-                        <?php if($_GET['page'] <= $nbrPage-1 && count($arrayjoueury) <= 5): ?>
+                        <?php if($_GET['page'] <= $nbrPage-1 && count($arrayjoueur) <= 5): ?>
                             <a name="" id="" class="btn  btn-red " href="<?=WEB_ROUTE.'?controllers=admin&view=liste.joueur&page='.$suivant; ?>" role="button">Suivant</a>
                         <?php endif ?>
 

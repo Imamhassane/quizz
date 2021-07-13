@@ -74,11 +74,15 @@ if (isset($_SESSION['arrayError'])){
                                 </small>
                         <?php endif ?>
 
-                        <?php $plusInput = $_SESSION['plus']?>
                          <?php
                             $json = file_get_contents(FILE_QUESTIONS);
                             $arrayQuestion = json_decode($json , true);
                          ?>
+                        <?php
+                            if (is_numeric($_SESSION['plus'])){
+                                $plusInput = $_SESSION['plus'];
+                            }
+                        ?>
                         <?php for ($i = 0 ; $i <= $plusInput-1; $i++) :?>
                        
                         <div class="form-group row mt-5 ml-3">
