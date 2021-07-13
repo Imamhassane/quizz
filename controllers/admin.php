@@ -34,9 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $question = find_question_id($id);
             $ok = suppression_question($id);
             header('location:'.WEB_ROUTE.'?controllers=admin&view=liste.question');        
-        }elseif($_GET['view'] == 'test'){
-           
-            require(ROUTE_DIR.'view/admin/test.html.php');
         }
     }
 }elseif($_SERVER['REQUEST_METHOD'] == 'POST'){

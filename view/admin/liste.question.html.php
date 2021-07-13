@@ -29,8 +29,7 @@
                                 <?php if($question['reponse']){ ?>
                                     <?php foreach ($question['reponse'] as $res ):?>
                                         <?php if($question['type_de_reponse'] == 'text'):?>
-                                            <input type="text" name="" id="input" class="form-control texte " value="" >    
-                                            <?=$res=''?>
+                                            <?=$res?></br>
                                         <?php endif ?>
                                         <?php if($question['type_de_reponse'] == 'simple'):?>
                                             <input type="radio" class="form-check-input" name="radio" id="" value="" >
