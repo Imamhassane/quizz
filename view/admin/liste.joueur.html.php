@@ -22,8 +22,8 @@
                     <tbody>
                     <?php foreach ($data as $user ):?>
                         <tr>
-                            <td><?=$user['prenom']?></td>
-                            <td><?=$user['nom']?></td>
+                            <td><?=$user['prenom'].' '.$user['nom']?></td>
+                            <td><?=$user['role']?></td>
                             <td><?=$user['score']?></td>
 
                         </tr>
