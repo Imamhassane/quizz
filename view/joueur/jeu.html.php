@@ -61,7 +61,7 @@
                 </div>
         </div>
         
-            <div class="col-md-5 mt-" >      
+            <div class="col-md-5 unset-it" >      
               <?php require(ROUTE_DIR.'view/joueur/top.score.html.php');?>
           </div>
 
