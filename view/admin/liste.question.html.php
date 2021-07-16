@@ -1,8 +1,6 @@
 <?php
     require_once(ROUTE_DIR.'view/inc/head.html.php');
 ?>
-
-
     <div class="row">
         <div class="col-md-4 mt-5">
             <div class="mt-4 ">
