@@ -20,7 +20,8 @@
                         <?php $question = $data[$i]?>
 
                         <div>
-                            <span class="ml-2 mt-2" ><?=($i+1).':'.' '.$question['question']?></span> 
+                            <span class="ml-2 mt-2" ><?=($i+1).':'.' '.$question['question']?></span>
+                             
                             <a name="" id="" class="btn btn1 mr-0" href="<?=WEB_ROUTE.'?controllers=admin&view=edit&id='.$question['id']?>" role="button"> <i class="fas fa-edit "></i></a>
                             <a name="" id="" class="btn btn1 mr-0"  href="<?=WEB_ROUTE.'?controllers=admin&view=supprimer&id='.$question['id']?>" role="button"> <i class="far fa-trash-alt"></i></a>
                         </div>

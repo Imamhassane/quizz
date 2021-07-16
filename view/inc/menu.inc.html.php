@@ -32,8 +32,6 @@ require_once(ROUTE_DIR.'view/inc/header.inc.html.php');
                 <a class=" ml-3 mt-0" href="<?= WEB_ROUTE.'?controllers=admin&view=show.user'?>">Liste des administrateurs</a>
                 <i class="fas fa-list-ul ml-auto mr-2 cursor"></i>
             </div>
-          
-   
             <div class="d-flex mt-3">
                 <a class=" ml-3 mt-0" href="<?= WEB_ROUTE.'?controllers=admin&view=tableau.bord'?>">Tableau de bord</a>
                 <i class="fas fa-signal ml-auto mr-2 cursor"></i>

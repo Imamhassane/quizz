@@ -11,12 +11,14 @@
 <div class="container menu-deconnect">
     
     <div class="row mt-4  deconnexion">
-    <h6 class="text-white m-4">PARAMETER VOS QUIZZ</h6>
+    <h6 class="text-white m-4"> <?= est_admin()? 'PARAMETER VOS QUIZZ' :'Developper votre culture générale'?></h6>
 
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 
                     <div class="openMenu"><i class="fa fa-bars"></i></div>
                     <ul class="mainMenu ">
+            <?php if(est_admin()):?>
+
                         <div class="d-flex mt-5 menu-mobile ">
                             <li><a class="  mt-4" href="<?= WEB_ROUTE.'?controllers=admin&view=liste.question'?>">Liste des question</a></li>
                             <i class="fas fa-list-ul ml-auto ask "></i>
@@ -47,7 +49,17 @@
                              <li><a class="  mt-0" href="<?= WEB_ROUTE.'?controllers=admin&view=tableau.bord'?>">Tableau de bord</a></li>
                              <i class="fas fa-signal ml-auto mr-2 cursor"></i>
 
-                        </div> 
+                        </div>
+            <?php else: ?>       
+                        <div class="d-flex mt-5 menu-mobile ">
+                            <li><a class="  mt-4" href="<?= WEB_ROUTE.'?controllers=joueur&view=top.score'?>">5 meilleurs scores</a></li>
+                            <i class="fas fa-list-ul ml-auto ask "></i>
+                        </div>
+                        <div class=" back">
+                            <a href="<?= WEB_ROUTE.'?controllers=joueur&view=jeu'?>" >Revenir à la page de jeu</a>
+                        </div>
+            <?php endif ?>
+                       
                         <?php if (est_connect()):?>
                                 <li class="nav-item active ml-auto mr-auto mt-2">
                                     <a class="deconnect" class="nav-link  " href="<?= WEB_ROUTE.'?controllers=security&view=deconnexion'?>" >Deconnexion</a>
@@ -63,7 +75,15 @@
             <?php endif ?>
         </ul>
     </div>
-    
+    <style>
+    .back a{
+    color: #000;
+    opacity: 0.5;
+}
+.back a:hover{
+    color: #c90017;
+}
+    </style>
     <script>
     const mainMenu = document.querySelector('.mainMenu');
     const closeMenu = document.querySelector('.closeMenu');

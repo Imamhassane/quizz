@@ -41,9 +41,8 @@ if (isset($_SESSION['arrayError'])){
                         <small class = "form-text text-danger ml-3">
                                 <?= isset($arrayError['nombre_de_points']) ? $arrayError['nombre_de_points'] : '' ;?>
                         </small>
-                       <?php $tab =['Text','simple','choix_multiple']; 
                        
-                       ?>
+                      
                         <div class=" form-group row mt-5 ml-3 ">
                             <label for="" class="mt-2">Type de réponse</label>
                             <select class="form-select ml-2" aria-label="Disabled select example" name="type_de_reponse" >
@@ -62,7 +61,7 @@ if (isset($_SESSION['arrayError'])){
                                 <input type="number" name="reponse_possible" id="input" class="form-control number-type" value="<?=isset($question['reponse_possible']) ? $question['reponse_possible'] : ""; ?><?= isset($_SESSION['reponse_possible']) ? $_SESSION['reponse_possible'] : '' ?>" min="{5"} max="" step=""  title="">    
                             </div>
                             <div class="btn-plus"> 
-                                <button type="submit" name="<?=isset($question['id']) ? "modif" : "plus"?>"  class="btn mt-2">+</button>
+                                <button type="submit" name="<?=isset($question['id']) ? "modif" : "plus"?>"  class="btn mt-2">OK</button>
                             </div>
                         </div>
                          <small class = "form-text text-danger ml-3 mb-3 ">
