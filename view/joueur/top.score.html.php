@@ -24,9 +24,7 @@
                                 </tbody>
                             </table>   
                     </div>
-                   
                 </div>
-
 <style>
 
       .table td, .table th {

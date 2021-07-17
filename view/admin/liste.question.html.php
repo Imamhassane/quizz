@@ -28,7 +28,7 @@
                                 <?php if($question['reponse']){ ?>
                                     <?php foreach ($question['reponse'] as $res ):?>
                                         <?php if($question['type_de_reponse'] == 'text'):?>
-                                            <?=$res?></br>
+                                            
                                         <?php endif ?>
                                         <?php if($question['type_de_reponse'] == 'simple'):?>
                                             <input type="radio" class="form-check-input" name="radio" id="" value="" >
@@ -64,6 +64,9 @@
                         <?php endif ?>
                         <?php if($_GET['page'] <= $nbrPage-1 && count($arrayQuestion) > 5 || $_GET['view'] == 'confirme'  ): ?>
                             <a name="" id="" class="btn  btn-red mt-2" href="<?=WEB_ROUTE.'?controllers=admin&view=liste.question&page='.$suivant; ?>" role="button">Suivant</a>
+                        <?php endif ?>
+                        <?php if($_GET['page'] > $nbrPage-1): ?>
+                            <a name="" id="" class="btn  btn-red mt-2 disabled" href="#" role="button">Suivant</a>
                         <?php endif ?>
                     <div class="float-left ml-3">
                         <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>

@@ -20,7 +20,8 @@
                                 <?php if($question['reponse']){ ?>
                                     <?php foreach ($question['reponse'] as $res ):?>
                                         <?php if($question['type_de_reponse'] == 'text'):?>
-                                            <?=$res?></br>
+                                            <input type="text" class="form-check-input input-text" name="" id="" value="" >
+                                            <?= $res = ''?>
                                         <?php endif ?>
                                         <?php if($question['type_de_reponse'] == 'simple'):?>
                                             <input type="radio" class="form-check-input" name="radio" id="" value="" >
@@ -45,11 +46,14 @@
                     $arrayQuestion= json_decode($json,true);
                 ?>
                 <div class="suivant mt-2">
-                        <?php if(($_GET['view'] == 'liste.question') && count($arrayQuestion) <= 5 ): ?>
+                        <?php if(($_GET['view'] == 'liste.question') && count($arrayQuestion) <= 1 ): ?>
                             <a name="" id="" class="btn btn-red disabled  mt-2" href="<?=WEB_ROUTE.'?controllers=joueur&view=jeu'; ?>" role="button">Suivant</a>
                         <?php endif ?>
-                        <?php if($_GET['page'] <= $nbrPage-1 && count($arrayQuestion) > 5 || $_GET['view'] == 'confirme'  ): ?>
+                        <?php if($_GET['page'] <= $nbrPage-1 && count($arrayQuestion) > 1  ): ?>
                             <a name="" id="" class="btn  btn-red mt-2" href="<?=WEB_ROUTE.'?controllers=joueur&view=jeu&page='.$suivant; ?>" role="button">Suivant</a>
+                        <?php endif ?>
+                        <?php if($_GET['page'] > $nbrPage-1): ?>
+                            <a name="" id="" class="btn  btn-red mt-2" href="#" role="button">Valider</a>
                         <?php endif ?>
                     <div class="float-left ml-3">
                         <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
@@ -74,7 +78,11 @@
 
 
 <style>
-
+.input-text {
+    background-color: #ddd;
+    border: none;
+    border-bottom: 2px solid #c90017;
+}
       .table td, .table th {
           padding: .75rem;
           vertical-align: top;

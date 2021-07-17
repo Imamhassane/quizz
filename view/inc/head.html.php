@@ -52,11 +52,11 @@
                         </div>
             <?php else: ?>       
                         <div class="d-flex mt-5 menu-mobile ">
-                            <li><a class="  mt-4" href="<?= WEB_ROUTE.'?controllers=joueur&view=top.score'?>">5 meilleurs scores</a></li>
+                            <li><a class="  mt-4" href="<?= WEB_ROUTE.'?controllers=joueur&view=top.score'?>">Voir les 5 meilleurs scores</a></li>
                             <i class="fas fa-list-ul ml-auto ask "></i>
                         </div>
-                        <div class=" back">
-                            <a href="<?= WEB_ROUTE.'?controllers=joueur&view=jeu'?>" >Revenir à la page de jeu</a>
+                        <div class=" back mt-5 mr-1 mb-4">
+                            <a href="<?= WEB_ROUTE.'?controllers=joueur&view=jeu'?>">Revenir à la page de jeu</a>
                         </div>
             <?php endif ?>
                        
@@ -79,6 +79,7 @@
     .back a{
     color: #000;
     opacity: 0.5;
+    font-size: 12px;
 }
 .back a:hover{
     color: #c90017;

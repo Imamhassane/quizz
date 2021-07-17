@@ -43,6 +43,9 @@
                         <?php if($_GET['page'] <= $nbrPage-1 && count($arrayadmin) <= 5): ?>
                             <a name="" id="" class="btn  btn-red mb-3" href="<?=WEB_ROUTE.'?controllers=admin&view=show.user&page='.$suivant; ?>" role="button">Suivant</a>
                         <?php endif ?>
+                        <?php if($_GET['page'] > $nbrPage-1): ?>
+                            <a name="" id="" class="btn  btn-red mt-2 disabled" href="#" role="button">Suivant</a>
+                        <?php endif ?>
                     <div class="float-left ml-2">
                         <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
                             <a name="" id="" class="btn btn-red disabled  mb-3" href="<?=WEB_ROUTE.'?controllers=admin&view=show.user&page='.$precednt;  ?>" role="button">Precedent</a> 
